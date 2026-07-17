@@ -7,19 +7,6 @@ from api import get_ai_answer
 
 # 页面基础配置
 st.set_page_config(page_title="小航 · 郑州航院校园信息助手")
-st.markdown("""
-<style>
-div[data-testid="stHeader"] div[data-testid="stDeployButton"] {
-    display: none !important;
-}
-#MainMenu {
-    visibility: hidden !important;
-}
-footer {
-    visibility: hidden !important;
-}
-</style>
-""", unsafe_allow_html=True)
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 # 全局统计提问次数
@@ -118,7 +105,7 @@ elif user_input is not None and query == "":
     st.info("请输入你的问题再提问")
 
 # 清空历史对话按钮（同步清零提问计数）
-if st.button("清空全部历史对话", type="secondary"):
+if st.button("清空历史对话", type="secondary"):
     st.session_state.chat_history = []
     st.session_state.temp_chat = None
     st.session_state.ask_count = 0
