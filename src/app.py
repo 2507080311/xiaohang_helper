@@ -66,7 +66,7 @@ if query:
     st.divider()
     start_time = time.time()
     # 加载状态动画
-    with st.spinner("AI正在读取知识库并生成回答，请稍候..."):
+    with st.spinner("AI正读取知识库并生成回答，请稍候..."):
         # 检测data知识库是否缺失
         md_file_list = list(Path("data").glob("*.md"))
         if not md_file_list:
